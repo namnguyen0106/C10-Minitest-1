@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>Nhập năm:</span>
+<input type="text" id="year">
+<button onclick="cau4d()">Click</button>
+<p id="result"></p>
+<p>===============</p>
+<input type="text" id="a">
+<input type="text" id="b">
+<input type="text" id="c">
+<button onclick="cau4e()">Click</button>
+<p id="result2"></p>
+</body>
+<script>
+    function cau4d() {
+        let year = +document.getElementById("year").value
+        let output = document.getElementById("result")
+        if (year >= 2000) {
+            if (year % 100 === 0) {
+                output.innerHTML = parseInt(year / 100);
+            } else {
+                output.innerHTML = parseInt(year / 100) + 1;
+            }
+        } else {
+            output.innerHTML = parseInt(year / 100) + 1;
+        }
+    }
+
+    function cau4e() {
+        let a = +document.getElementById("a").value
+        let b = +document.getElementById("b").value
+        let c = +document.getElementById("c").value
+        if (a + b > c && a + c > b && b + c > a) {
+            if (a === b && b === c) {
+                alert("Là tam giác đều")
+            } else if (a === b || b === c || a === c) {
+                alert("Là tam giác cân")
+            } else if (a * a === b * b + c * c || b * b === a * a + c * c || c * c === a * a + b * b) {
+                alert("Là tam giác vuông")
+            } else {
+                alert("Là tam giác")
+            }
+        } else {
+            alert("Không phải là tam giác")
+        }
+    }
+</script>
+</html>
