@@ -6,32 +6,34 @@
 </head>
 <body>
 <span>Nhập năm:</span>
-<input type="text" id="year">
-<button onclick="cau4d()">Click</button>
+<input type="text" id="year" placeholder="Nhập năm">
+<button onclick="checkCentury()">Click</button>
 <p id="result"></p>
 <p>===============</p>
-<input type="text" id="a">
-<input type="text" id="b">
-<input type="text" id="c">
-<button onclick="cau4e()">Click</button>
-<p id="result2"></p>
+<input type="text" id="a" placeholder="Nhập cạnh a">
+<input type="text" id="b" placeholder="Nhập cạnh b">
+<input type="text" id="c" placeholder="Nhập cạnh c">
+<button onclick="checkTriangle()">Click</button>
 </body>
 <script>
-    function cau4d() {
+    //Tính thế kỷ
+    function checkCentury() {
         let year = +document.getElementById("year").value
         let output = document.getElementById("result")
+        let century;
         if (year >= 2000) {
             if (year % 100 === 0) {
-                output.innerHTML = parseInt(year / 100);
+                century = parseInt(year / 100);
             } else {
-                output.innerHTML = parseInt(year / 100) + 1;
+                century = parseInt(year / 100) + 1;
             }
         } else {
-            output.innerHTML = parseInt(year / 100) + 1;
+            century = parseInt(year / 100) + 1;
         }
+        output.innerHTML = "Năm " + year + " là thế kỷ: " + century;
     }
 
-    function cau4e() {
+    function checkTriangle() {
         let a = +document.getElementById("a").value
         let b = +document.getElementById("b").value
         let c = +document.getElementById("c").value
